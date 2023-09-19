@@ -1,11 +1,11 @@
 {
   "4418696456": {
-    "level": "Owner",
+    "level": 3,
     "chattag": "[ChadV4 Developer]",
     "whitelisted": true
   },
   "5025161604": {
-    "level": "Private",
+    "level": 2,
     "chattag": "[ChadV4 Private]",
     "whitelisted": true
   }
