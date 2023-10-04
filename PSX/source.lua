@@ -61633,74 +61633,84 @@
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local ScriptVersion = "1.0"
-local UpdatedVersoin = "1.0"
+local UpdatedVersion = "1.0"
 local DupeTime = 8
-local Updatekickmessage = "Your Script Version are"..ScriptVersion.."and its too old ! please update on out github | github.com/LynoForWindows/scripts/doors"
-if UpdatedVersoin > ScriptVersion then
-    game.Players.LocalPlayer:Kick(Updatekickmessage)
+local UpdateKickMessage = "Your Script Version is "..ScriptVersion..", and it's too old! Please update on our GitHub: github.com/LynoForWindows/scripts/doors"
+
+if UpdatedVersion > ScriptVersion then
+    game.Players.LocalPlayer:Kick(UpdateKickMessage)
 end
+
 OrionLib:MakeNotification({
-	Name = "Lyno",
-	Content = "Game Detected , PSX",
-	Image = "rbxassetid://7733964719",
-	Time = 5
+    Name = "Lyno",
+    Content = "Game Detected - PSX",
+    Image = "rbxassetid://7733964719",
+    Time = 5
 })
---Custom Main Color
-Main = Color3.fromRGB(255, 236, 0)
+
+-- Custom Main Color
+local Main = Color3.fromRGB(255, 236, 0)
 local Window = OrionLib:MakeWindow({Name = "✅Lyno | PSX Dupe/TradeScam Alpha v1.2", HidePremium = false, SaveConfig = true, ConfigFolder = "LynoPSXDupeTradeV1.2"})
+
 OrionLib:MakeNotification({
-	Name = "Lyno Loaded",
-	Content = "Sucess Loaded !",
-	Image = "rbxassetid://7733964719",
-	Time = 10
+    Name = "Lyno Loaded",
+    Content = "Successfully Loaded!",
+    Image = "rbxassetid://7733964719",
+    Time = 10
 })
+
 local Note = Window:MakeTab({
-	Name = "Note(ReadBeforeUse)",
-	Icon = "rbxassetid://7733674153",
-	PremiumOnly = false
+    Name = "Note (Read Before Use)",
+    Icon = "rbxassetid://7733674153",
+    PremiumOnly = false
 })
-Note:AddParagraph("Read Before using the Script","We Supported sirus Premium, ©LynoScripts,     How to Use it :open tabs and click the toggle or button")
+
+Note:AddParagraph("Read Before using the Script", "We support Sirus Premium. ©LynoScripts.\n\nHow to Use:\nOpen tabs and click the toggle or button")
+
 local DupeTab = Window:MakeTab({
-	Name = "🤑Dupe",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+    Name = "🤑Dupe",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
 })
 
 DupeTab:AddToggle({
-	Name = "Dupe Pets",
-	Default = false,
-	Callback = function(Value)
-        OrionLib:MakeNotification({
-            Name = "!!WARNING!!",
-            Content = "Don't Move or Toggle box , if did you will lose your pets !",
-            Image = "rbxassetid://7733964719",
-            Time = DupeTime
-        })
-		OrionLib:MakeNotification({
-            Name = "Injecting Dupe Virus",
-            Content = "Duping Your Pets in ur Bank ! ",
-            Image = "rbxassetid://7733964719",
-            Time = 10
-        })
-        wait(10)
-        OrionLib:MakeNotification({
-            Name = "Hey!",
-            Content = "Duped EOF ! ",
-            Image = "rbxassetid://7733964719",
-            Time = 10
-        })
-        wait(1)
-        game.Players.LocalPlayer:Kick("Pet Send to Your Bank.")
-	end    
+    Name = "Dupe Pets",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            OrionLib:MakeNotification({
+                Name = "!! WARNING !!",
+                Content = "Don't Move or Toggle the box, or you will lose your pets!",
+                Image = "rbxassetid://7733964719",
+                Time = DupeTime
+            })
+            OrionLib:MakeNotification({
+                Name = "Injecting Dupe Virus",
+                Content = "Duping Your Pets in your Bank!",
+                Image = "rbxassetid://7733964719",
+                Time = 10
+            })
+            wait(10)
+            OrionLib:MakeNotification({
+                Name = "Hey!",
+                Content = "Duped EOF!",
+                Image = "rbxassetid://7733964719",
+                Time = 10
+            })
+            wait(1)
+            game.Players.LocalPlayer:Kick("Pets Sent to Your Bank.")
+        else
+            print("Disabled")
+        end
+    end
 })
-
 
 local TradeTab = Window:MakeTab({
-	Name = "🔪Trade",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+    Name = "🔪Trade",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
 })
---Orion V2 Source Scammer
+
 local TradeScamEnabled = false
 
 local function ToggleTradeScam()
@@ -61709,35 +61719,46 @@ local function ToggleTradeScam()
     if TradeScamEnabled then
         OrionLib:MakeNotification({
             Name = "Lyno",
-            Content = "Trade Scam V1.2 is enabled!",
-            Image = "rbxassetid://7733964719",
-            Time = 10
-        })
-                
-        local player = game.Players.LocalPlayer
-        local character = player.Character or player.CharacterAdded:Wait()
-
-        
-        local bodyVelocity = Instance.new("BodyVelocity")
-        bodyVelocity.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
-        bodyVelocity.Velocity = Vector3.new(0, 0, 0)
-        bodyVelocity.Parent = character.HumanoidRootPart
-
-        
-        wait(1)
-
-        
-        bodyVelocity:Destroy()
-        OrionLib:MakeNotification({
-            Name = "Lyno Scammer",
-            Content = "Scam is Started ! , it would be laggy.",
+            Content = "Trade Scam V1.2 is Disabled!",
             Image = "rbxassetid://7733964719",
             Time = 10
         })
     else
         OrionLib:MakeNotification({
             Name = "Lyno",
-            Content = "Trade Scam V1.2 is disabled!",
+            Content = "Trade Scam V1.2 is enabled!",
+            Image = "rbxassetid://7733964719",
+            Time = 10
+        })
+        -- High Ping Script
+
+        -- Configuration
+        local delay = 1 -- Delay between each simulated high ping in seconds
+        local highPingDuration = 2 -- Duration of each simulated high ping in seconds
+
+        -- Function to simulate high ping
+        local function simulateHighPing()
+            local startTime = tick()
+            while tick() - startTime < highPingDuration do
+                -- Perform a computationally light task
+                local x = 0
+                for i = 1, 1000000 do
+                    x = x + 1
+                end
+            end
+        end
+
+        -- Function to create high ping spikes periodically
+        local function createHighPingPeriodically()
+                simulateHighPing()
+        end
+
+        -- Start simulating high ping
+        spawn(createHighPingPeriodically)
+        spawn(createHighPingPeriodically)
+        OrionLib:MakeNotification({
+            Name = "Lyno Scammer",
+            Content = "Scam is Started! It might be laggy.",
             Image = "rbxassetid://7733964719",
             Time = 10
         })
@@ -61745,7 +61766,7 @@ local function ToggleTradeScam()
 end
 
 TradeTab:AddToggle({
-    Name = "Trade Scam V1.2 , laggy",
+    Name = "Trade Scam V1.2 (laggy)",
     Default = false,
     Callback = ToggleTradeScam
 })
@@ -61767,46 +61788,31 @@ Player:AddSlider({
 	end    
 })
 Player:AddToggle({
-	Name = "ChatSpammer",
-	Default = false,
-	Callback = function(Value)
-        OrionLib:MakeNotification({
-            Name = "Lyno",
-            Content = "ChatSpam Started >:)",
-            Image = "rbxassetid://7733964719",
-            Time = 10
-        })
-		local settings = {
-            AutoChat_Time = 1,
-            AutoChat_Delay = 10,
-            AutoChat = true,
-         }
-         
-         local chatrem = game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest
-         
-         while task.wait(settings.AutoChat_Time) do
-             chatrem:FireServer('Lyno on top', "All")
-             
-         end
-	end    
-})
-
-
-local PremiumWindow = Window:MakeTab({
-	Name = "Premium",
-	Icon = "rbxassetid://7733765398,
-	PremiumOnly = true
-})
-PremiumWindow:AddButton({
-	Name = "Doors",
-	Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/LynoForWindows/scripts/main/Doors/LynoDoors.lua"))()
-  	end    
-})
-PremiumWindow:AddButton({
-    Name ="Shut Down",
-    Callback = function()
-        OrionLib:Destroy
+    Name = "ChatSpammer",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            OrionLib:MakeNotification({
+                Name = "Lyno",
+                Content = "ChatSpam Started >:)",
+                Image = "rbxassetid://7733964719",
+                Time = 10
+            })
+            local settings = {
+                AutoChat_Time = 1,
+                AutoChat_Delay = 10,
+                AutoChat = true,
+            }
+            
+            local chatrem = game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest
+            
+            while wait(settings.AutoChat_Time) do
+                chatrem:FireServer('Lyno on top', "All")
+                wait(settings.AutoChat_Delay)
+            end
+        else
+            print("ChatSpammer is disabled.")
+        end
     end
 })
 
@@ -62205,6 +62211,5 @@ txt.OnIncomingMessage = function(msg)
 
 	return p
 end
-
 
 
