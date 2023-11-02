@@ -1,0 +1,11 @@
+{
+  "1234567890": {
+    "userType": "private"
+  },
+  "9876543210": {
+    "userType": "owner"
+  },
+  "1357924680": {
+    "userType": "public"
+  }
+}
