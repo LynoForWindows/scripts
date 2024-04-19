@@ -5,6 +5,7 @@ https://dsc.gg/lyno
 
 ## NEW TO CODE? WATCH
 Execute this
-lua```
+lua
+```
 print("Hello World lyno on top")
 ```
