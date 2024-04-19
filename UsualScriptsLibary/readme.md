@@ -1,7 +1,7 @@
 ## CREDITS
 MY SELF LOLLLLLL
 ## DISCORD SERVER
-https://dsc.gg/lyno
+[Click me to join](https://dsc.gg/lyno)
 
 ## NEW TO CODE? WATCH
 Execute this
